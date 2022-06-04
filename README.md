@@ -41,14 +41,14 @@
 </table>
 
 
-<a href="https://arxiv.org/abs/2205.13524">PREF</a>  is a new neural scene representation allows:
+<a href="https://arxiv.org/abs/2205.13524">PREF</a>  is a new neural scene representation that allows:
 1. super fast training and rendering novel views. 
 2. preserving high-order derivatives.
-3. editing optimized neural fields through frequncy-domian manipulation.
+3. editing optimized neural fields through frequency-domain manipulation.
 
 ---------
 TL;DR
-We learn frequency representations (<font color='blue'>blue</font>) for neural signals (<font color='red'>red</font>)
+<p>We learn frequency representations (<font color='blue'>blue</font>) for neural signals (<font color='red'>red</font>)</P>
 <p align="center">
     <img src="./media/fourier.gif" alt="Logo" width="50%"> 
 </p>
