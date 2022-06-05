@@ -30,7 +30,7 @@
 <table>
 <tr>
 <td align="center"><img src="./media/novelviews.gif" alt="Logo" width="100%"></td>
-<td align="center"><img src="./media/derivitives.gif" alt="Logo" width="95%"></td>
+<td align="center"><img src="./media/derivitives.gif" alt="Logo" width="100%"></td>
 <td align="center"><img src="./media/sdf.gif" alt="Logo" width="100%"></td>
 </tr>
 <tr>
