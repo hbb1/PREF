@@ -1,4 +1,3 @@
-
 <p align="left">
 
   <h3 align="left">
@@ -53,12 +52,45 @@ TL;DR
     <img src="./media/fourier.gif" alt="Logo" width="50%"> 
 </p>
 
+-------------
+## Installation
 
-### Code coming soon
+Tested on Ubutu 20.04 + Pytorch 1.11.0 
+(It seems important to install Pytorh version higher than 1.11.0 for complex tensor optimization).
+
+## Using PREF
+Replacing `tiny PE encoder + deep MLP` with `PREF encoder (dense PE) + shallow MLP` to accelerate neural signal reconstruction. This is a preliminary release, without being carefully tested.
+### Example
+```python
+import torch
+import torch.nn as nn
+import torch.nn.functional as F
+from encoder.pref_encoder import PREF
+
+class NeuralNet(nn.Module):
+  def __init__(self):
+    self.encoder = PREF(linear_freqs=[128]*3, reduced_freqs=[1]*3, feature_dim=16)
+    input_dim = self.encoder.output_dim
+    hidden_dim = 64
+    self.mlp = torch.nn.Sequential(
+      torch.nn.Linear(input_dim, hidden_dim), 
+      torch.nn.ReLU(inplace=True), 
+      torch.nn.Linear(hidden_dim, 1))
+
+  def forward(self, x):
+    x = self.encoder(x)
+    x = self.mlp(x)
+    return x
+``` 
+
+## NeRF with PREF 
+
+To be released.
 
 
-<br>
 
+
+---------
 If you find our code or paper helpful in your research, please cite
 ```bibtex
 @article{Huang2022PREF,
