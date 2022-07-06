@@ -7,7 +7,7 @@ import torch.nn.functional as F
 
 class GRID(nn.Module):
     def __init__(self, resolutions, feature_dim, device='cuda', **kwargs):
-        super(grid, self).__init__()
+        super(GRID, self).__init__()
         self.device = device
         self.res = resolutions
         self.dim = feat_dim

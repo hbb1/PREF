@@ -1,3 +1,4 @@
+# PREF
 <p align="left">
 
   <h3 align="left">
@@ -45,14 +46,13 @@
 2. preserving high-order derivatives.
 3. editing optimized neural fields through frequency-domain manipulation.
 
----------
-TL;DR
+### TL;DR
 <p>We learn frequency representations (<font color='blue'>blue</font>) for neural signals (<font color='red'>red</font>)</P>
 <p align="center">
     <img src="./media/fourier.gif" alt="Logo" width="50%"> 
 </p>
 
--------------
+
 ## Installation
 
 Tested on Ubutu 20.04 + Pytorch 1.11.0 
@@ -67,9 +67,11 @@ import torch.nn as nn
 import torch.nn.functional as F
 from encoder.pref_encoder import PREF
 
-class NeuralNet(nn.Module):
+class NeuralField(nn.Module):
   def __init__(self):
+    super().__init__()
     self.encoder = PREF(linear_freqs=[128]*3, reduced_freqs=[1]*3, feature_dim=16)
+    
     input_dim = self.encoder.output_dim
     hidden_dim = 64
     self.mlp = torch.nn.Sequential(
@@ -90,7 +92,7 @@ To be released.
 
 
 
----------
+## Citation
 If you find our code or paper helpful in your research, please cite
 ```bibtex
 @article{Huang2022PREF,
