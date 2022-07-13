@@ -10,10 +10,10 @@ class GRID(nn.Module):
         super(GRID, self).__init__()
         self.device = device
         self.res = resolutions
-        self.dim = feat_dim
+        self.dim = feature_dim
         self.init_volume()
         self.mask = torch.ones(1,1, *self.res).to(device)
-        self.output_dim = feat_dim
+        self.output_dim = feature_dim
         print(self)
 
     def init_volume(self):
@@ -43,7 +43,7 @@ class GRID(nn.Module):
 
     def forward(self, inputs, variance=0, bound=1):
         inputs = inputs / bound # map to [-1, 1]
-        feat = grid_sample_3d(self.params[0], inputs[None,None,None].flip(-1)).reshape(self.dim, -1)
+        feat = F.grid_sample(self.params[0], inputs[None,None,None].flip(-1), padding_mode='zeros', align_corners=True).reshape(self.dim, -1)
         return feat.T
 
 

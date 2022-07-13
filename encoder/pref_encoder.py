@@ -14,7 +14,7 @@ class PREF(nn.Module):
             linear_freqs: number of 2D freqeuncies 
             reduced_freqs: number of 1D frequencies 
             sampling: linear or explonential increasing
-            feat_dim: output dimension
+            feature_dim: output dimension
         """
         super().__init__()
         self.device = device
@@ -28,7 +28,7 @@ class PREF(nn.Module):
         
         self.ktraj = self.compute_ktraj(self.axis, self.linear_res)
 
-        self.output_dim = feat_dim
+        self.output_dim = feature_dim
         self.alpha_params = nn.Parameter(torch.tensor([1e-3]).to(self.device))
         self.params = nn.ParameterList(
             self.init_phasor_volume()

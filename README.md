@@ -41,10 +41,10 @@
 </table>
 
 
-<a href="https://arxiv.org/abs/2205.13524">PREF</a>  is a new neural scene representation that allows:
-1. super fast training and rendering novel views. 
-2. preserving high-order derivatives.
-3. editing optimized neural fields through frequency-domain manipulation.
+<a href="https://arxiv.org/abs/2205.13524">PREF</a>  is an effecient frequency-based neural scene representation that allows:
+1. super fast training and rendering novel views. (fast and approximated solvers, *FFT*, exisit.)
+2. preserving high-order derivatives. (periodic nature of sinusoidal functions.)
+3. editing optimized neural fields through frequency-domain manipulations. (convolutional kernels as fourier multipliers.)
 
 ### TL;DR
 <p>We learn frequency representations (<font color='blue'>blue</font>) for neural signals (<font color='red'>red</font>)</P>
