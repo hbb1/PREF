@@ -118,9 +118,9 @@ def reconstruction(args, return_bbox=False, return_memory=False, bbox_only=False
 
     # init parameters
     if not bbox_only and args.dataset_name=='blender':
-        # use tight bbox pre-extracted and stored in meta.py, which takes 2k iters
+        # use tight bbox pre-extracted and stored in misc.py, which takes 2k iters
         data = args.datadir.split('/')[-1]
-        from meta import blender_aabb
+        from misc import blender_aabb
         aabb = torch.tensor(blender_aabb[data]).reshape(2,3).to(device)
     else:
         # run bbox from scratch
