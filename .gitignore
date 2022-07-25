@@ -1,1 +1,14 @@
-.vscode
+/data
+/log
+*.obj
+**/__pycache__/**
+/cache
+*.log
+/results
+/new_exps
+/*.txt
+/base_config
+/*.out
+/*.slurm
+/.vscode
+/exps

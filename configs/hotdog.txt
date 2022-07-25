@@ -1,0 +1,41 @@
+dataset_name = blender
+datadir = ./data/nerf_synthetic/hotdog
+expname =  hotdog
+basedir = ./cache/hotdog
+
+n_iters = 30000
+batch_size = 4096
+N_voxel_init = 2097152 # 128**3
+N_voxel_final = 16777216 # 256**3
+
+upsamp_list = [2000,3000,4000, 5500, 7000]
+update_AlphaMask_list = [2000, 4000]
+
+N_vis = 5
+vis_every = 5000
+render_test = 1
+
+
+model_name = 'PhasoMLP'
+den_num_comp = [1,1,1]
+app_num_comp = [1,1,1]
+app_ksize = 16
+app_aug = 'flip'
+den_ksize = 8
+app_dim = 36
+app_scale = 1
+den_scale = 1
+
+
+shadingMode = MLP_Fea
+fea2denseAct = softplus
+rm_weight_mask_thre = 0.001
+alpha_mask_thre = 0.001
+softplus_beta = 1
+
+view_pe = 2
+fea_pe = 2
+lr_upsample_reset = 1
+TV_weight_density = 1
+TV_weight_density_reset = 1e-3
+alpha_init = 1e-2
