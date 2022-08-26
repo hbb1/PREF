@@ -92,7 +92,7 @@ Install environment:
 conda create -n PhasoRF python=3.8
 conda activate PhasoRF
 pip install torch torchvision
-pip install tqdm scikit-image opencv-python configargparse lpips imageio-ffmpeg kornia lpips tensorboard
+pip install tqdm scikit-image opencv-python configargparse lpips imageio-ffmpeg kornia lpips tensorboard plyfile
 ```
 
 ### Dataset
