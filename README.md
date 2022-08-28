@@ -1,29 +1,4 @@
 # PREF
-<p align="left">
-
-  <h3 align="left">
-  <a href="https://arxiv.org/abs/2205.13524">
-  PREF: Phasorial Embedding Fields for Compact Neural Representations
-  </a>
-  </h3>
-   
-  <p align="left">
-    <a href="https://hbb1.github.io/">Binbin Huang</a>
-    ·
-    <a href="https://svip-lab.github.io/">Xinhao Yan</a>
-    ·
-    <a href="https://apchenstu.github.io/">Anpei Chen</a>
-    ·
-    <a href="https://scholar.google.co.jp/citations?hl=zh-CN&user=fe-1v0MAAAAJ">Shenghua Gao</a>
-    ·
-    <a href="http://www.yu-jingyi.com/">Jingyi Yu</a>
-
-  </p>
-  </h4>
-  <div align="left"></div>
-</p>
-
-
 
 <table>
 <tr>
@@ -45,7 +20,10 @@
 3. editing optimized neural fields through frequency-domain manipulations. (convolutional kernels as Fourier multipliers.)
 
 ### TL;DR
-<p>We learn frequency representations (<font color='blue'>blue</font>) for neural signals (<font color='red'>red</font>)</P>
+<p>We learn frequency representations (<font color='blue'>blue</font>) for neural signals (<font color='red'>red</font>).</P>
+You can also view it as a dense variant of Position Encoding or Fourier Feature Mapping by rearranging their parameters in the first linear layer into a phasor volume.
+
+
 <p align="center">
     <img src="./media/fourier.gif" alt="Logo" width="35%"> 
 </p>
@@ -53,7 +31,7 @@
 
 ## Installation
 
-Tested on Ubutu 20.04 + Pytorch 1.11.0 
+Tested on Ubuntu 20.04 + Pytorch 1.11.0 
 (It seems important to install Pytorh version higher than 1.11.0 for complex tensor optimization).
 
 ## Using PREF
@@ -84,7 +62,6 @@ class NeuralField(nn.Module):
 ``` 
 
 ## NeRF with PREF 
-The code is built upon [TensoRF](https://github.com/apchenstu/TensoRF), so you can also refer to it in case you have any issues.
 
 ### Installation
 Install environment:
@@ -116,7 +93,7 @@ We provide a few examples in the configuration folder, note that:
 
 `dataset_name`, choices = ['blender', 'llff', 'nsvf', 'tankstemple']. 
 
-Notice: We have tested parameters for 'blender' dataset, and others stay tuning. 
+Notice: We have tested parameters for 'blender' dataset, and you should get about $36.4$ psnr for the hotdog scene if correctly installing the repo. 
 
 
 ## Acknowledgement
@@ -125,12 +102,21 @@ NeRF with PREF extensively uses code from [TensoRF](https://github.com/apchenstu
 
 
 ## Citation
-If you find our code or paper helpful in your research, please cite
+If you find our code or paper helpful in your research, please consider citing
 ```bibtex
 @article{Huang2022PREF,
   author = {Huang, Binbin and Yan, Xinhao and Chen, Anpei and Gao,Shenghua and Yu, Jingyi},
   title = {PREF: Phasorial Embedding Fields for Compact Neural Representations},
   publisher = {arXiv},
   year = {2022},
+}
+```
+Please also consider citing
+```bibtex
+@article{tensorf,
+  title={TensoRF: Tensorial Radiance Fields},
+  author={Chen, Anpei and Xu, Zexiang and Geiger, Andreas and Yu, Jingyi and Su, Hao},
+  journal={arXiv preprint arXiv:2203.09517},
+  year={2022}
 }
 ```
