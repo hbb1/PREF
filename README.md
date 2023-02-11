@@ -16,7 +16,7 @@
 
 <a href="https://arxiv.org/abs/2205.13524">PREF</a>  is an efficient frequency-based neural scene representation that allows:
 1. super fast training and rendering novel views. (fast and approximated solvers, *FFT*, exist.)
-2. preserving high-order derivatives. (periodic nature of sinusoidal functions.)
+2. gloabl optimization behaviour. (optimizing a local point lead global change.) 
 3. editing optimized neural fields through frequency-domain manipulations. (convolutional kernels as Fourier multipliers.)
 
 ### TL;DR
